@@ -3,7 +3,7 @@ import {
     Sheet,
     SheetContent,
     SheetTrigger,
-  } from "@/components/ui/sheet"
+  } from "../../components/ui/sheet"
 import  Link from "next/link"
 import { usePathname } from "next/navigation"
 import ThemeSwitch from "./ThemeSwitch"

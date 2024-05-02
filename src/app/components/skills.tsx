@@ -1,5 +1,5 @@
-import {my_skills} from "@/app/components/contents/icons"
-import {backend_skills} from "@/app/components/contents/icons"
+import {my_skills} from "../../app/components/contents/icons"
+import {backend_skills} from "../../app/components/contents/icons"
 import SkillsDataProvider from "./skillsDataProvider"
 
 const Skills = () => {

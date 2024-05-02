@@ -1,10 +1,10 @@
 "use client"
-import Icons from "@/app/components/icons";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
+import Icons from "../../app/components/icons";
+import { Button } from "../../components/ui/button";
+import { Input } from "../../components/ui/input";
 import Footer from "./footer";
 import { useState } from "react";
-import { log } from "console";
+
 
 const Contact = () => {
   const [fullName , setFullName] = useState("")

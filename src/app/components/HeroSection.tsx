@@ -2,7 +2,7 @@
 import Image from "next/image";
 import image1 from "../../../public/image.jpeg";
 import { TypeAnimation } from "react-type-animation";
-import { Button } from "@/components/ui/button";
+import { Button } from "../../components/ui/button";
 import  Link  from "next/link"
 
 const HeroSection = () => {
