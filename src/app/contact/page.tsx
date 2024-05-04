@@ -1,35 +1,36 @@
 "use client"
+import { useState } from "react";
 import Icons from "../../app/components/icons";
 import { Button } from "../../components/ui/button";
 import { Input } from "../../components/ui/input";
 import Footer from "./footer";
-import { useState } from "react";
 
+export default function Contact() {
+  const [result, setResult] = useState("Send Message");
 
-const Contact = () => {
-  const [fullName , setFullName] = useState("")
-  const [email , setEmail] = useState("")
-  const [message , setMessage] = useState("")
-  const [error , setError] = useState([])
+  const onSubmit = async (event:any) => {
+    event.preventDefault();
+    setResult("Sending....");
+    const formData = new FormData(event.target);
 
-  const handleSubmit=async (e: { preventDefault: () => void; })=>{
-e.preventDefault()
-console.log("fullname: ",fullName);
-console.log("Email:", email);
-console.log("message:", message);
+    formData.append("access_key", "86a19034-5e36-43d8-9632-4017a20028dd");
 
-const res = await fetch("/api/contact",{
-  method:"POST",
-  headers: {
-    "content-type" : "application-json",
-  },
-  body:JSON.stringify({
-    fullName,email,message
-  })
-})
-const {msg} = await res.json()
-setError(msg)
-}
+    const response = await fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      body: formData
+    });
+
+    const data = await response.json();
+
+    if (data.success) {
+      setResult("Email Sent Successfully");
+      event.target.reset();
+    } else {
+      console.log("Error", data);
+      setResult(data.message);
+    }
+  };
+
   return (
     <div>
     <section className="relative mt-8 sm:mt-20 px-10 py-4 sm:grid sm:grid-cols-2">
@@ -43,11 +44,9 @@ setError(msg)
       </div>
 
       <form
-      onSubmit={handleSubmit} className="flex flex-col gap-4 mt-6 sm:mt-0 ">
+      onSubmit={onSubmit} className="flex flex-col gap-4 mt-6 sm:mt-0 ">
       <label htmlFor="Full Name" className="block text-sm font-medium">Full Name</label>
         <Input
-        onChange={(e)=>setFullName(e.target.value)}
-        value={fullName}
           type="text" 
           id="fullname"
           required
@@ -56,8 +55,6 @@ setError(msg)
         />
         <label htmlFor="email" className="block text-sm font-medium">Your Email</label>
         <Input
-        onChange={(e)=>setEmail(e.target.value)}
-        value={email}
           type="email" 
           id="email"
           required
@@ -67,8 +64,6 @@ setError(msg)
   
         <label htmlFor="message" className="block text-sm font-medium">Your Message</label>
         <Input
-        onChange={(e)=>setMessage(e.target.value)}
-        value={message}
           type="text" 
           id="message"
           required
@@ -78,14 +73,14 @@ setError(msg)
         <Button
           className="w-full sm:w-10/12 mt-2 text-center text-white bg-gradient-to-r from-blue-900 to-teal-600 rounded"
        type="submit" >
-          Send Message
+        {result}
         </Button>
-        <p className=" mt-2 text-red-600 px-5 py-2 border border-b-2 border-gray-700 bg-gray-200 dark:bg-gray-900 w-full sm:w-10/12 rounded text-sm block">Error Message</p>
       </form>
 </section>
+    
     <Footer/>
+
     </div>
   );
 }
 
-export default Contact;

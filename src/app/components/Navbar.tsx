@@ -42,7 +42,7 @@ const Navbar = () => {
          </Link>
    <ThemeSwitch/>
     </div>
-    <div className="sm:hidden flex items-center justify-end mr-2 gap-2">
+    <div className="sm:hidden flex items-center justify-end  gap-2">
         <ThemeSwitch/>
     <Sheet open={isOpen}
     onOpenChange={(open=>setOpen(open))}>
@@ -70,7 +70,7 @@ const Navbar = () => {
     onClick={onPressLink}
     className={`${pathname === "/"
      ? "bg-teal-50 text-teal-500 border-teal-500 dark:bg-gray-800 block border-l-4 pl-3 pr-4 py-2 text-base font-medium"  
-     : "block border-transparent border-l-4 pl-3 pr-4 py-2 text-base font-medium dark:hover:bg-gray-700  hover:bg-gray-50 hover:border-gray-300 hover:text-teal-500 dark:text-white text-gray-500"}`}>
+     : "block border-transparent border-l-4 pl-3 pr-4 py-2 text-base font-medium dark:hover:bg-gray-700  hover:bg-gray-50 hover:border-gray-300 hover:text-teal-500 text-white"}`}>
         Home
         </Link>
     </li>
@@ -83,7 +83,7 @@ const Navbar = () => {
          prefetch
          className={`${pathname === "/projects" 
          ? "bg-teal-50 dark:bg-gray-800 border-teal-500 text-teal-500 block border-l-4 pl-3 pr-4 py-2 text-base font-medium"
-          : "border-transparent block border-l-4 text-base font-medium pl-3 pr-4 py-2 dark:hover:bg-gray-700 dark:text-white text-gray-500 hover:bg-gray-50 hover:text-teal-500  hover:border-gray-300 "}`}>Projects</Link>
+          : "border-transparent block border-l-4 text-base font-medium pl-3 pr-4 py-2 dark:hover:bg-gray-700 text-white  hover:bg-gray-50 hover:text-teal-500  hover:border-gray-300 "}`}>Projects</Link>
         </li>
         <li 
     className="mt-2">
@@ -92,7 +92,7 @@ const Navbar = () => {
         onClick={onPressLink}
         className={`${pathname === "/contact"
          ? "bg-teal-50 text-teal-500 border-teal-500 dark:bg-gray-800  block border-l-4 pl-3 pr-4 py-2 text-base font-medium"  
-         : "block hover:bg-gray-50 border-l-4 hover:border-gray-300  hover:text-teal-500  border-transparent pl-3 pr-4 py-2 text-base font-medium dark:hover:bg-gray-700 dark:text-white text-gray-500 "}`}>
+         : "block hover:bg-gray-50 border-l-4 hover:border-gray-300  hover:text-teal-500  border-transparent pl-3 pr-4 py-2 text-base font-medium dark:hover:bg-gray-700 text-white  "}`}>
             Contact
             </Link>
         </li>

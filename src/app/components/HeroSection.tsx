@@ -12,8 +12,8 @@ const HeroSection = () => {
     return (
         <section className="lg:grid grid-cols-12">
             <div className="lg:col-span-7 place-self-center container">
-                <h1 className="hidden sm:block  mb-4 text-4xl lg:text-6xl font-extrabold">
-                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-900 to-teal-600">
+                <h1 className="hidden md:block mb-4 text-4xl lg:text-6xl font-extrabold">
+                    <span className="hidden md:block text-transparent bg-clip-text bg-gradient-to-r from-blue-900 to-teal-600">
                     Hello I&apos;m
                     </span>
                     <span>
@@ -34,9 +34,9 @@ const HeroSection = () => {
                         />
                     </span>
                 </h1>
-                <p className="hidden sm:block text-gray-500 px-6 sm:px-0 dark:text-gray-300 text-lg lg:text-xl leading-8 tracking-tight">I am a web developer</p>
+                <p className="hidden md:block text-gray-500 px-6 sm:px-0 dark:text-gray-300 text-lg lg:text-xl leading-8 tracking-tight">I am a web developer</p>
               
-                <Button className=" hidden sm:block lg:flex lg:mt-4 w-2/12 mt-2 text-center bg-gradient-to-r from-blue-900 to-teal-600 rounded text-white "
+                <Button className=" hidden md:block lg:flex lg:mt-4 w-2/12 mt-2 text-center bg-gradient-to-r from-blue-900 to-teal-600 rounded text-white "
        type="submit"
        ><Link href="/contact">Hire me</Link></Button>
             </div>
@@ -48,10 +48,10 @@ const HeroSection = () => {
                  height={300} 
                  className="rounded-full w-250 lg:w-400 h-250 lg:h-400 place-self-center" />
                 <h1 
-                className="lg:hidden md:hidden  mb-4 text-4xl lg:text-6xl font-extrabold">
+                className=" mb-4 text-4xl lg:text-6xl font-extrabold">
                     <span
-                     className="text-transparent bg-clip-text bg-gradient-to-r from-blue-900 to-teal-600">Hello I&apos;m</span>
-                    <span>
+                     className="lg:hidden md:hidden text-transparent bg-clip-text bg-gradient-to-r from-blue-900 to-teal-600">Hello I&apos;m</span>
+                    <span className="lg:hidden md:hidden">
                         <TypeAnimation
                             sequence={[
                                 ' Safina',
