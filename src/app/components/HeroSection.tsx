@@ -48,7 +48,7 @@ const HeroSection = () => {
                  height={300} 
                  className="rounded-full w-250 lg:w-400 h-250 lg:h-400 place-self-center" />
                 <h1 
-                className=" mb-4 text-4xl lg:text-6xl font-extrabold">
+                className=" mb-4 text-4xl lg:text-6xl font-extrabold text-center">
                     <span
                      className="lg:hidden md:hidden text-transparent bg-clip-text bg-gradient-to-r from-blue-900 to-teal-600">Hello I&apos;m</span>
                     <span className="lg:hidden md:hidden">
